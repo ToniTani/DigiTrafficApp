@@ -14,6 +14,7 @@
 		A7A0ECAD23F61E3000794FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A0ECAC23F61E3000794FF4 /* Assets.xcassets */; };
 		A7A0ECB023F61E3000794FF4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A0ECAF23F61E3000794FF4 /* Preview Assets.xcassets */; };
 		A7A0ECB323F61E3000794FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A0ECB123F61E3000794FF4 /* LaunchScreen.storyboard */; };
+		A7A0ECBC23F89A9600794FF4 /* Webclient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0ECBB23F89A9600794FF4 /* Webclient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A7A0ECAF23F61E3000794FF4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A7A0ECB223F61E3000794FF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7A0ECB423F61E3000794FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7A0ECBB23F89A9600794FF4 /* Webclient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webclient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		A7A0ECA223F61E2700794FF4 /* DigiTrafficApp */ = {
 			isa = PBXGroup;
 			children = (
+				A7A0ECBA23F89A5900794FF4 /* Services */,
 				A7A0ECA323F61E2700794FF4 /* AppDelegate.swift */,
 				A7A0ECA523F61E2700794FF4 /* SceneDelegate.swift */,
 				A7A0ECAA23F61E2700794FF4 /* ContentView.swift */,
@@ -76,6 +79,14 @@
 				A7A0ECAF23F61E3000794FF4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A7A0ECBA23F89A5900794FF4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A7A0ECBB23F89A9600794FF4 /* Webclient.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7A0ECA423F61E2700794FF4 /* AppDelegate.swift in Sources */,
+				A7A0ECBC23F89A9600794FF4 /* Webclient.swift in Sources */,
 				A7A0ECA623F61E2700794FF4 /* SceneDelegate.swift in Sources */,
 				A7A0ECAB23F61E2700794FF4 /* ContentView.swift in Sources */,
 				A7A0ECA923F61E2700794FF4 /* DigiTrafficApp.xcdatamodeld in Sources */,
