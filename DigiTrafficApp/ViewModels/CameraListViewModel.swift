@@ -8,9 +8,24 @@
 
 import Foundation
 
-class CameraListViewModel {
+class CameraListViewModel: ObservableObject {
     
     var searchTerm: String = ""
-    var cameras: [CameraViewModel] = [CameraViewModel]()
+    @Published var cameras: [CameraViewModel] = [CameraViewModel]()
     
+    func load(){
+        fetchCameras()
+        }
+    
+    private func fetchCameras() {
+        Webclient().getCameras { cameras in
+            if let cameras = cameras {
+                DispatchQueue.main.async {
+                    self.cameras = cameras.map(CameraViewModel.init)
+                    
+                }
+            }
+        }
+    }
 }
+
