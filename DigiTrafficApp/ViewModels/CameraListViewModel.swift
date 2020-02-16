@@ -10,4 +10,7 @@ import Foundation
 
 class CameraListViewModel {
     
+    var searchTerm: String = ""
+    var cameras: [CameraViewModel] = [CameraViewModel]()
+    
 }
