@@ -16,6 +16,8 @@
 		A7A0ECB323F61E3000794FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A0ECB123F61E3000794FF4 /* LaunchScreen.storyboard */; };
 		A7A0ECBC23F89A9600794FF4 /* Webclient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0ECBB23F89A9600794FF4 /* Webclient.swift */; };
 		A7A0ECBF23F8A28F00794FF4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0ECBE23F8A28F00794FF4 /* Camera.swift */; };
+		A7A0ECC323F8BCD500794FF4 /* CameraListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0ECC223F8BCD500794FF4 /* CameraListViewModel.swift */; };
+		A7A0ECC523F8C61300794FF4 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0ECC423F8C61300794FF4 /* CameraViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		A7A0ECB423F61E3000794FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A0ECBB23F89A9600794FF4 /* Webclient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webclient.swift; sourceTree = "<group>"; };
 		A7A0ECBE23F8A28F00794FF4 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		A7A0ECC223F8BCD500794FF4 /* CameraListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraListViewModel.swift; sourceTree = "<group>"; };
+		A7A0ECC423F8C61300794FF4 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		A7A0ECA223F61E2700794FF4 /* DigiTrafficApp */ = {
 			isa = PBXGroup;
 			children = (
+				A7A0ECC123F8BC8000794FF4 /* ViewModels */,
 				A7A0ECBD23F8A26000794FF4 /* Models */,
 				A7A0ECBA23F89A5900794FF4 /* Services */,
 				A7A0ECA323F61E2700794FF4 /* AppDelegate.swift */,
@@ -98,6 +103,15 @@
 				A7A0ECBE23F8A28F00794FF4 /* Camera.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A7A0ECC123F8BC8000794FF4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A7A0ECC223F8BCD500794FF4 /* CameraListViewModel.swift */,
+				A7A0ECC423F8C61300794FF4 /* CameraViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +190,9 @@
 				A7A0ECBF23F8A28F00794FF4 /* Camera.swift in Sources */,
 				A7A0ECA623F61E2700794FF4 /* SceneDelegate.swift in Sources */,
 				A7A0ECAB23F61E2700794FF4 /* ContentView.swift in Sources */,
+				A7A0ECC523F8C61300794FF4 /* CameraViewModel.swift in Sources */,
 				A7A0ECA923F61E2700794FF4 /* DigiTrafficApp.xcdatamodeld in Sources */,
+				A7A0ECC323F8BCD500794FF4 /* CameraListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
