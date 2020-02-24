@@ -10,9 +10,9 @@ import Foundation
 
 class Webclient {
     
-    func getCameras(completion: @escaping (([Camera]?) -> Void)) {
+    func getCameras(by id: String, completion: @escaping (([Camera]?) -> Void)) {
         
-        guard let url = URL(string: "https://tie.digitraffic.fi/api/v1/data/camera-data")else{
+        guard let url = URL(string: "https://tie.digitraffic.fi/api/v1/data/camera-data/\(id)") else{
             fatalError("URL is not correct")
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
