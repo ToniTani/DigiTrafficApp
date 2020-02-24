@@ -7,12 +7,20 @@
 //
 
 import Foundation
+import Combine
 
-struct CameraViewModel {
+final class CameraViewModel: ObservableObject {
+    @Published var current: Camera?
     
-    let camera: Camera
-    
-    var presentationName: String {
-        return self.camera.presentationName.uppercased()
+    init() {
+        self.fetch()
+    }
+}
+
+extension CameraViewModel {
+    func fetch(_ id: String = "C01502") {
+        Webclient().getCameras(by: id) {
+            self.current = $0
+        }
     }
 }
