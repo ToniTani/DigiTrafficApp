@@ -8,6 +8,23 @@
 
 import Foundation
 
-struct Camera: Decodable {
+import Foundation
+
+struct Camera: Codable {
+    let dataUpdatedTime: String
+    let cameraStations: [CameraStations]
+}
+
+struct CameraStations: Codable, Identifiable {
+    let id: String
+    let roadStationId, nearestWeatherStationId: Int
+    let cameraPresets: [CameraPresets]
+    
+}
+
+struct CameraPresets: Codable, Identifiable {
+    let id: String
     let presentationName: String
+    let imageUrl: String
+    let measuredTime: String
 }
