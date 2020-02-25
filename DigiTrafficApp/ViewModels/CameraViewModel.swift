@@ -13,12 +13,12 @@ final class CameraViewModel: ObservableObject {
     @Published var current: Camera?
     
     init() {
-        self.fetch()
+        self.fetchCameras()
     }
 }
 
 extension CameraViewModel {
-    func fetch(_ id: String = "C01502") {
+    func fetchCameras(_ id: String = "C01508") {
         Webclient().getCameras(by: id) {
             self.current = $0
         }

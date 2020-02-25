@@ -6,7 +6,7 @@
 //  Copyright © 2020 Toni Tani. All rights reserved.
 //
 
-import Foundation
+/*import Foundation
 
 class CameraListViewModel: ObservableObject {
     
@@ -18,7 +18,7 @@ class CameraListViewModel: ObservableObject {
         }
     
     private func fetchCameras() {
-        Webclient().getCameras { cameras in
+        Webclient().getCameras(by: id) { cameras in
             if let cameras = cameras {
                 DispatchQueue.main.async {
                     self.cameras = cameras.map(CameraViewModel.init)
@@ -27,5 +27,5 @@ class CameraListViewModel: ObservableObject {
             }
         }
     }
-}
+} */
 
