@@ -15,8 +15,6 @@ class Webclient {
         guard let url = URL(string: "https://tie.digitraffic.fi/api/v1/data/camera-data/\(id)") else {
             fatalError("URL is not correct")
         }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            
                     URLSession.shared.dataTask(with: url) { data, _, _ in
                         let cam = try! JSONDecoder().decode(Camera.self, from: data!)
                         DispatchQueue.main.async {
@@ -26,5 +24,4 @@ class Webclient {
                 }
     }
     
-}
 
