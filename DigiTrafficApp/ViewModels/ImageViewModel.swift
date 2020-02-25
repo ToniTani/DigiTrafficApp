@@ -11,11 +11,11 @@ import SwiftUI
 
 struct ImageView: View {
     
-    @ObservedObject var imageFromWeb: ImageLoader
+    @ObservedObject var imageFromWeb: ImageFromWeb
     @State var image: UIImage = UIImage()
     
     init(withURL url: String) {
-        imageFromWeb = ImageLoader(urlString: url)
+        imageFromWeb = ImageFromWeb(urlString: url)
     }
     
     var body: some View {
@@ -27,7 +27,7 @@ struct ImageView: View {
     }
 }
 
-class ImageLoader: ObservableObject {
+class ImageFromWeb: ObservableObject {
     @Published var data:Data?
 
     init(urlString: String) {
