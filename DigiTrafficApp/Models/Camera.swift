@@ -8,23 +8,36 @@
 
 import Foundation
 
-import Foundation
-
 struct Camera: Codable {
-    let dataUpdatedTime: String
+    let dataUpdatedTime: Date
     let cameraStations: [CameraStations]
 }
 
-struct CameraStations: Codable, Identifiable {
+// MARK: - CameraStation
+struct CameraStations: Codable {
     let id: String
-    let roadStationId, nearestWeatherStationId: Int
+    let roadStationID: Int
+    let nearestWeatherStationID: Int?
     let cameraPresets: [CameraPresets]
-    
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case roadStationID = "roadStationId"
+        case nearestWeatherStationID = "nearestWeatherStationId"
+        case cameraPresets
+    }
 }
 
-struct CameraPresets: Codable, Identifiable {
+// MARK: - CameraPreset
+struct CameraPresets: Codable {
     let id: String
-    let presentationName: String
-    let imageUrl: String
-    let measuredTime: String
+    let presentationName: String?
+    let imageURL: String
+    let measuredTime: Date?
+
+    enum CodingKeys: String, CodingKey {
+        case id, presentationName
+        case imageURL = "imageUrl"
+        case measuredTime
+    }
 }
