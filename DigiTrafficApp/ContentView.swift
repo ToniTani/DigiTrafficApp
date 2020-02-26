@@ -10,38 +10,42 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var searchTerm: String = ""
+    @State private var selected = 0
+    @ObservedObject var camVM = CameraViewModel()
+    @State var id: String = ""
+
     
     init() {
-        UINavigationBar.appearance().backgroundColor = UIColor.black
+                
         UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UITableView.appearance().backgroundColor = UIColor.black
-        UITableViewCell.appearance().backgroundColor = UIColor.black
 
+        UITableViewCell.appearance().backgroundColor = UIColor.gray
+        UITableView.appearance().backgroundColor = UIColor.black
+
+        
+        Webclient().getCameras(by: "C01508") {
+            print($0 ?? "C01508")
+        }
     }
     
-    var body: some View {
-        NavigationView {
-            
-            ZStack(alignment: .leading) {
+ var body: some View {
                 
-                Color.black
-                Text("pvm")
-                    .font(.custom("Arial", size: 32))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.gray)
-                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
-                    .offset(y: -400)
-                
-                SearchView(searchTerm: $searchTerm)
-                    .offset(y: -350)
-            }
-                
-            .navigationBarTitle("Kelikamerat")
-            
-        }.edgesIgnoringSafeArea(Edge.Set(.bottom))
+                VStack (alignment: .center) {
+                    TextField("Search by id:", text: self.$camVM.idName){
+                        self.camVM.search()
+                    
+                   // TextField("Search by id:", text: $id){
+                    //    self.cam.fetchCameras(self.id)
+                    }
+                    
+                    CameraListView(camera: self.camVM.current)
+                }.font(.custom("Arial", size: 30))
+                               .foregroundColor(Color.black)
+                               .offset(y: 30)
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
