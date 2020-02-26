@@ -9,14 +9,24 @@
 import Foundation
 import Combine
 
-final class CameraViewModel: ObservableObject {
+ class CameraViewModel: ObservableObject {
+    
     @Published var current: Camera?
     
     init() {
         self.fetchCameras()
     }
+    
+    var idName: String = ""
+
+    func search() {
+        if let id = self.idName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
+            fetchCameras(id)
+        }
+    }
 }
 
+    
 extension CameraViewModel {
     func fetchCameras(_ id: String = "C01508") {
         Webclient().getCameras(by: id) {
@@ -24,3 +34,4 @@ extension CameraViewModel {
         }
     }
 }
+
