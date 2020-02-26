@@ -33,10 +33,12 @@ struct ContentView: View {
                 VStack (alignment: .center) {
                     TextField("Search by id:", text: self.$camVM.idName){
                         self.camVM.search()
-                    
-                   // TextField("Search by id:", text: $id){
-                    //    self.cam.fetchCameras(self.id)
-                    }
+
+                    }.foregroundColor(.secondary)
+                    .background(Color(.secondarySystemBackground))
+                    .cornerRadius(11)
+                    .padding(14)
+
                     
                     CameraListView(camera: self.camVM.current)
                 }.font(.custom("Arial", size: 30))
