@@ -9,15 +9,23 @@
 import SwiftUI
 
 struct SearchView: View {
+    
     @Binding var searchTerm: String
-        
+    
+        @State var id: String = ""
+        @ObservedObject var camVM = CameraViewModel()
+
+    
         var body: some View {
           
             HStack {
                       Spacer()
                       Image(systemName: "magnifyingglass")
                       
-                      TextField("Search", text: self.$searchTerm).foregroundColor(Color.primary)
+                TextField("Search By id", text: self.$camVM.idName) {
+                    self.camVM.search()
+                }
+                        .foregroundColor(Color.primary)
                           .padding(10)
                       
                       Spacer()
