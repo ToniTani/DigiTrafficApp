@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A74B667F2404632F00FE67AC /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B667E2404632F00FE67AC /* ImageViewModel.swift */; };
 		A74B66812404696000FE67AC /* PresetCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B66802404696000FE67AC /* PresetCameraView.swift */; };
 		A74B668324046F3000FE67AC /* CameraListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B668224046F3000FE67AC /* CameraListView.swift */; };
+		A75609EA2406DF17008C431D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A75609E92406DF17008C431D /* SDWebImageSwiftUI */; };
 		A7A0ECA423F61E2700794FF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0ECA323F61E2700794FF4 /* AppDelegate.swift */; };
 		A7A0ECA623F61E2700794FF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0ECA523F61E2700794FF4 /* SceneDelegate.swift */; };
 		A7A0ECA923F61E2700794FF4 /* DigiTrafficApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7A0ECA723F61E2700794FF4 /* DigiTrafficApp.xcdatamodeld */; };
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A75609EA2406DF17008C431D /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,9 @@
 			dependencies = (
 			);
 			name = DigiTrafficApp;
+			packageProductDependencies = (
+				A75609E92406DF17008C431D /* SDWebImageSwiftUI */,
+			);
 			productName = DigiTrafficApp;
 			productReference = A7A0ECA023F61E2700794FF4 /* DigiTrafficApp.app */;
 			productType = "com.apple.product-type.application";
@@ -178,6 +183,9 @@
 				Base,
 			);
 			mainGroup = A7A0EC9723F61E2700794FF4;
+			packageReferences = (
+				A75609E82406DF17008C431D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = A7A0ECA123F61E2700794FF4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -408,6 +416,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A75609E82406DF17008C431D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A75609E92406DF17008C431D /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A75609E82406DF17008C431D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A7A0ECA723F61E2700794FF4 /* DigiTrafficApp.xcdatamodeld */ = {

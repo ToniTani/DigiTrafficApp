@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct CameraListView: View {
     
@@ -18,11 +19,21 @@ struct CameraListView: View {
                 NavigationView {
                     List {
                         if (camera?.cameraStations[0].cameraPresets != nil) {
-                            ForEach((camera?.cameraStations[0].cameraPresets)!) { cameraPreset in
+                            ForEach((camera?.cameraStations[0].cameraPresets)!) {
+                                
+                                cameraPreset in
                                 NavigationLink(destination: PresetCameraView(cPreset:  cameraPreset)) {
+                                    
                                     Text(cameraPreset.presentationName)
+                                    Spacer()
+                                    WebImage(url: URL(string: cameraPreset.imageUrl)!, options: .highPriority, context: nil)
+                                    .resizable()
+                                        .frame(width: 105, height: 90)
+                                    .cornerRadius(15)
+                                    
                                 }
                             }
+                        
                         }
                     }.navigationBarTitle(Text("Kamerat"))
                 }
