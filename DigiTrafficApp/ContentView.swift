@@ -14,7 +14,6 @@ struct ContentView: View {
     @ObservedObject var camVM = CameraViewModel()
     @State var id: String = ""
 
-    
     init() {
                 
         UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -31,7 +30,7 @@ struct ContentView: View {
  var body: some View {
                 
                 VStack (alignment: .center) {
-                    TextField("Search by id:", text: self.$camVM.idName){
+                    TextField("SEARCH BY ID:", text: self.$camVM.idName){
                         self.camVM.search()
 
                     }.foregroundColor(.secondary)
@@ -41,7 +40,7 @@ struct ContentView: View {
 
                     
                     CameraListView(camera: self.camVM.current)
-                }.font(.custom("Arial", size: 30))
+                }.font(.custom("Arial", size: 24))
                                .foregroundColor(Color.black)
                                .offset(y: 30)
     }
