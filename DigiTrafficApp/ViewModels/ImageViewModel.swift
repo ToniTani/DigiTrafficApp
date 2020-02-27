@@ -13,6 +13,9 @@ struct ImageView: View {
     
     @ObservedObject var imageFromWeb: ImageFromWeb
     @State var image: UIImage = UIImage()
+    @State private var zoomed: Bool = true
+
+    
     
     init(withURL url: String) {
         imageFromWeb = ImageFromWeb(urlString: url)
@@ -22,7 +25,12 @@ struct ImageView: View {
         VStack {
             Image(uiImage: imageFromWeb.data != nil ? UIImage(data:imageFromWeb.data!)! : UIImage())
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: self.zoomed ? .fill : .fit)
+                .onTapGesture {
+                    withAnimation {
+                        self.zoomed.toggle()
+                    }
+            }
             }
     }
 }
