@@ -16,21 +16,15 @@ struct PresetCameraView: View {
         var body: some View {
             VStack {
                 
-                Text(cPreset.measuredTime)
                 Text(cPreset.presentationName)
-               // .font(.custom("Copperplate", size: 25))
-              //  .foregroundColor(Color.black)
-               // .offset(y: 30)
+                    .font(.custom("Copperplate", size: 25))
+               // Text(cPreset.measuredTime)
+                //    .font(.custom("Copperplate", size: 25))
 
                 ImageView(withURL: cPreset.imageUrl)
-                .onTapGesture {
-                    withAnimation {
-                        self.zoomed.toggle()
                     }
                 }
-                
-                }
-            }
+            
         }
-    
+          
 
