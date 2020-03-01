@@ -1,2 +1,2 @@
 # DigiTrafficApp Preview
-![Image description](https://ibb.co/mFPnHB5)
+![Image description](https://i.ibb.co/x8rnMsq/digitraffic-App-min.gif)
